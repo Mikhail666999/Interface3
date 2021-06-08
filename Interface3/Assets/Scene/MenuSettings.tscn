@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Theme/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Scripts/MenuSettings.gd" type="Script" id=2]
+
+[node name="Settings" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 68.0
+margin_top = 36.0
+margin_right = 222.0
+margin_bottom = 90.0
+theme = ExtResource( 1 )
+text = "Выход"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sens_mouse" type="Label" parent="."]
+margin_left = 296.522
+margin_top = 119.003
+margin_right = 658.522
+margin_bottom = 155.003
+theme = ExtResource( 1 )
+text = "Чуствительность мыши : "
+
+[node name="HSlider" type="HSlider" parent="Sens_mouse"]
+margin_left = 359.607
+margin_top = -28.9391
+margin_right = 676.607
+margin_bottom = 59.0609
+
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

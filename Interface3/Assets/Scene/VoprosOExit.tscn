@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Theme/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Scripts/VoprosOExit.gd" type="Script" id=2]
+
+[node name="Vopros" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="Panel"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -640.0
+margin_right = 640.0
+margin_bottom = 84.7059
+text = "Куда Вы хотите выйти?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitGame" type="Button" parent="Panel"]
+anchor_left = 0.683304
+anchor_top = 1.20405
+anchor_right = 1.03773
+anchor_bottom = 1.38788
+margin_left = -84.8951
+margin_top = -358.617
+margin_right = -84.8951
+margin_bottom = -358.617
+text = "из Игры"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ExitMainMenu" type="Button" parent="Panel"]
+anchor_left = -0.279884
+anchor_top = 1.21485
+anchor_right = 0.239103
+anchor_bottom = 1.37294
+margin_left = 389.885
+margin_top = -368.907
+margin_right = 389.885
+margin_bottom = -368.907
+text = "В Главное меню"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Panel/ExitGame" to="." method="_on_ExitGame_pressed"]
+[connection signal="pressed" from="Panel/ExitMainMenu" to="." method="_on_ExitMainMenu_pressed"]
